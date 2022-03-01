@@ -9,9 +9,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SCREEN SIZE</title>
-    <meta name="description" content="">
+    <meta name="keywords" content="HTML, CSS, JavaScript, height, width, dynamic">
+    <meta name="author" content="Clayton Jacobs">
+    <meta name="description" content="Simple website that gives you the inner height and width of the users screen.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="My screen is how big?" />
+    <meta property="og:description" content="Get the inner height and width of your screen!" />
+    <meta property="og:site_name" content="ClaytonJacobs.dev" />
 </head>
 
 <body style="background-color: #114B5F;">
@@ -23,14 +29,14 @@
     </canvas>
     <script>
         var offset = 0;
+
         function init() {
             document.documentElement.style.overflow = 'hidden';  // firefox, chrome
             document.body.scroll = "no"; // ie only
             drawOnResize();
         }
+
         init();
-
-
 
         window.onresize = () => drawOnResize();
 

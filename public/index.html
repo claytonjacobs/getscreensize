@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SCREEN SIZE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body style="background-color: #114B5F;">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <canvas id="canvas">
+    </canvas>
+    <script>
+        var offset = 0;
+        function init() {
+            document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+            document.body.scroll = "no"; // ie only
+            drawOnResize();
+        }
+        init();
+
+
+
+        window.onresize = () => drawOnResize();
+
+        function drawOnResize() {
+            let w = window.innerWidth;
+            let h = window.innerHeight;
+
+            canvas = document.querySelector('#canvas');
+            canvas.width = w;
+            canvas.height = h;
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+                ctx.lineDashOffset = -offset;
+                ctx.setLineDash([100, 10]);
+
+                ctx.font = '38px serif';
+                ctx.fillStyle = "white";
+                ctx.fillText(w + 'px', (w / 2) - 45, (h / 2) - 30);
+                ctx.fillText(h + 'px', 30, 85);
+
+                ctx.font = '18px serif';
+                ctx.fillStyle = "lightgrey";
+
+                ctx.fillText('width', (w / 2) - 45, (h / 2) - 70);
+                drawLine(ctx, [w, h / 2], [0, h / 2], 'white', 15); // width 
+
+                ctx.fillText('height', 30, 45);
+                drawLine(ctx, [10, 0], [10, h], 'white', 15); // height
+            }
+        }
+
+        function drawLine(ctx, begin, end, stroke = 'black', width = 1) {
+            if (stroke) {
+                ctx.strokeStyle = stroke;
+            }
+            if (width) {
+                ctx.lineWidth = width;
+            }
+
+            ctx.beginPath();
+            ctx.moveTo(...begin);
+            ctx.lineTo(...end);
+            ctx.stroke();
+        }
+
+        function march() {
+            offset++;
+            if (offset > 1000) {
+                offset = 0;
+            }
+            drawOnResize();
+            setTimeout(march, 20);
+        }
+        march();
+
+    </script>
+</body>
+
+</html>

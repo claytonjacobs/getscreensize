@@ -1,0 +1,19 @@
+# refresh token with $> firebase login:ci
+
+name: CI
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_web:
+    name: Deploy to Firebase
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Firebase Hosting Only
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting --public public
+        env:
+          FIREBASE_TOKEN: "${{ secrets.FIREBASE_TOKEN }}"

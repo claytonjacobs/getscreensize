@@ -2,7 +2,7 @@
 
 #### [screensize.claytonjacobs.dev](https://screensize.claytonjacobs.dev)
 
----
+## [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ##### Simple website that gives you the inner height and width of the users screen.
 

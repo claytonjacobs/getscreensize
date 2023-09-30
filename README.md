@@ -10,5 +10,5 @@
   margin-left: auto;
   margin-right: auto;
   width: 65%;">
-<img src="https://ibb.co/6NDW2vh" alt="Screen-Shot-2022-03-01-at-2-48-43-PM" style="border-radius:3%">
+<img src="[https://ibb.co/6NDW2vh](https://i.ibb.co/M9PCb8T/CPT2309292018-640x538.gif)" alt="Screen shot of webpage" style="border-radius:3%">
 </a>

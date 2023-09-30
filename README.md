@@ -9,6 +9,6 @@
 <a style="  display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 65%;" href="https://ibb.co/xmDKQ1Z">
-<img src="https://i.ibb.co/WD6N1kC/Screen-Shot-2022-03-01-at-2-48-43-PM.png" alt="Screen-Shot-2022-03-01-at-2-48-43-PM" style="border-radius:3%">
+  width: 65%;">
+<img src="https://ibb.co/6NDW2vh" alt="Screen-Shot-2022-03-01-at-2-48-43-PM" style="border-radius:3%">
 </a>
